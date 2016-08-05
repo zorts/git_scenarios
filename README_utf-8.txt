@@ -10,6 +10,8 @@ This repository was created using a Linux on Z system with `LANG=en_US.UTF-8` se
 
 There are two text files, each encoded in multiple encodings; the chosen encodings are symmetric, in that iconv can be used to convert from one to the other and back without changing the content. The file names indicate the encoding used for the file.
 
+In this revision of the master branch, the text files have been slightly altered from their original versions.
+
 The sample of German text is encoded three ways. Note that UTF-8 encoding is larger than the other two.
 
     -rw-r--r--  1 jcallen abp 1039 Aug  5 10:03 german_ibm-1047.txt
