@@ -1,2 +1,2 @@
-*.tar binary
-*.tgz binary
+*.tar -diff
+*.tgz -diff
