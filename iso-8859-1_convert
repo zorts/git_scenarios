@@ -1,0 +1,4 @@
+#!/bin/sh
+
+iconv -t utf-8 -f iso-8859-1  <$1
+exit $?     

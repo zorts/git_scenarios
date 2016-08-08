@@ -1,0 +1,4 @@
+#!/bin/sh
+
+iconv -t utf-8 -f koi8-r  <$1
+exit $?     

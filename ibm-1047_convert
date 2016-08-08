@@ -1,0 +1,4 @@
+#!/bin/sh
+
+iconv -t utf-8 -f ibm-1047  <$1
+exit $?     

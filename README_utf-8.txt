@@ -14,15 +14,22 @@ In this revision of the master branch, the text files have been slightly altered
 
 The sample of German text is encoded three ways. Note that UTF-8 encoding is larger than the other two.
 
-    -rw-r--r--  1 jcallen abp 1039 Aug  5 10:03 german_ibm-1047.txt
-    -rw-r--r--  1 jcallen abp 1039 Aug  5 10:01 german_iso-8859-1.txt
-    -rw-r--r--  1 jcallen abp 1056 Aug  5 09:59 german_utf-8.txt
+    -rw-r--r-- 1 jcallen abp  1150 Aug  8 17:00 german_ibm-1047.txt
+    -rw-r--r-- 1 jcallen abp  1150 Aug  8 17:00 german_iso-8859-1.txt
+    -rw-r--r-- 1 jcallen abp  1167 Aug  8 16:41 german_utf-8.txt
 
 The sample of Russian text is encoded only two ways, since the characters used have no equivalent in either ISO-8859-1 or IBM-1047. Again, the UTF-8 encoding is the larger of the two.
 
-    -rw-r--r--  1 jcallen abp  279 Aug  5 09:39 russian_koi8-r.txt
-    -rw-r--r--  1 jcallen abp  502 Aug  5 09:08 russian_utf-8.txt
+    -rw-r--r-- 1 jcallen abp   390 Aug  8 17:00 russian_koi8-r.txt
+    -rw-r--r-- 1 jcallen abp   613 Aug  8 16:41 russian_utf-8.txt
 
 In addition to these text files, there are two binary files: a tar file containing the 5 text files, and a gzip'ed tar file containing the 5 text files.
 
 The UTF-8 versions of the text files are used as the source to generate the other versions. The script `regenerate.sh` uses `iconv` to produce the non-UTF-8 versions of the files, and generates the tar files.
+
+This latest rev also includes examples of git attributes to convert files for diff. The .gitattributes has been changed (so that it handles all the files not encoded in UTF-8), and sample conversion scripts have been supplied to do the work. These scripts have to be put on $PATH (so git can find them), and connected to the .gitattibutes file by means of these commands:
+
+    git config diff.iso-8859-1.textconv  iso-8859-1_convert
+    git config diff.koi8-r.textconv  koi8-r_convert
+    git config diff.ibm-1047.textconv  ibm-1047_convert
+
